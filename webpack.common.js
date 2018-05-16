@@ -10,8 +10,7 @@ module.exports = {
     output: {
         filename: "[name].[hash].js",
         path: path.resolve(__dirname, "./dist")
-    },
-
+	},
 
     resolve: {
         extensions: ["*", ".js", ".jsx"],
@@ -28,6 +27,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, "./src/index.html")
         }),
-    ]
+	]
+
 
 }
