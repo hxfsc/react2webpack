@@ -6,10 +6,9 @@ module.exports = {
     entry: {
         app: path.resolve(__dirname,  "./src/index.js")
     },
-    
+
     output: {
         filename: "[name].[hash].js",
-        //chunkFilename: "[name].[hash].js",
         path: path.resolve(__dirname, "./dist")
     },
 
@@ -29,9 +28,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, "./src/index.html")
         }),
-        // new webpack.optimize.CommonsChunkPlugin({
-        //     name: "common"
-        // })
     ]
 
 }
