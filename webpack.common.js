@@ -1,10 +1,9 @@
 const path = require("path");
-const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 module.exports = {
     entry: {
-        app: path.resolve(__dirname,  "./src/index.js")
+        app: path.resolve(__dirname, "./src/index.js")
     },
 
     output: {
@@ -18,6 +17,7 @@ module.exports = {
 
     module: {
         rules: [
+            { enforce: "pre", test: /\.(js|jsx)$/, exclude: /node_modules/, use: ["babel-loader", "eslint-loader"] },
             { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: "babel-loader" }
         ]
     },
