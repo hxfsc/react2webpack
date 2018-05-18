@@ -10,7 +10,7 @@ class App extends Component {
       23232
 
       hell
-		</div>)
+    </div>);
   }
 }
 

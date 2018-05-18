@@ -1,4 +1,3 @@
-/*noeslit*/
 const webpackDevServer = require("webpack-dev-server");
 const webpack = require("webpack");
 
@@ -20,3 +19,4 @@ const server = new webpackDevServer(compiler, options);
 server.listen("5000", "localhost", () => {
     console.log("dev server listening on port 5000");
 })
+
