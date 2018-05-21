@@ -1,16 +1,16 @@
 import React, { Component } from "react";
+import Base from "../src/components/base/BaseComponent";
+import Intro from "../src/components/base/IntroComponent";
+
 
 class App extends Component {
   render() {
-    return (<div>
-            e4444
-      1111333333232
-            eeee
-      eee
-      23232
-
-      hell
-    </div>);
+    return (
+      <div>
+        <Base />
+        <Intro />
+      </div>
+    );
   }
 }
 

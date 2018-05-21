@@ -9,7 +9,8 @@
     "build:server": "webpack --config webpack.server.js",
     "start": "node server-dev.js",
     "ssr": "node ssr.js",
-    "fix": "eslint --fix ./src"
+    "fix": "eslint --fix ./src",
+    "format": "prettier --write"
   },
   "repository": {
     "type": "git",

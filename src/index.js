@@ -4,9 +4,25 @@ import { AppContainer } from "react-hot-loader";
 
 import App from "./App";
 
+const user = {
+  firstName: "Hu",
+  lastName: "Xiaofei",
+};
+
+const fromatName = (user) => {
+  return `测试 ${user.firstName} ${user.lastName}`;
+};
+
+const elem = <div>IntroComponent , {fromatName(user)}!</div>;
+
 const render = (Component) => {
   ReactDOM.render(<AppContainer>
-      <Component />
+      <div>
+        <Component />
+        <div>
+          {elem}
+        </div>
+      </div>
     </AppContainer>, document.getElementById("root"));
 };
 
