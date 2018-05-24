@@ -11,14 +11,21 @@
     ],
 
     "rules": {
-        "quotes": 0,
-        "semi": 2,
-        "no-tabs": 0,
+        "quotes": 0,      //不区分单双引号
+        "semi": 0,        //不强制使用分号
+        "no-tabs": 1,      //使用tabs警告
         "no-shadow": 0,
         "arrow-body-style": 0,
+        "no-trailing-spaces": 1,     //一行结尾有空格警告
+        "no-useless-constructor": 0,
+        "comma-dangle": [2, "never"], //字面量尾不能有逗号
+        "constructor-super": 0,       //派生类不强制使用 constructor super
+        "no-this-before-super": 0,    //不强制在this 前 super
+        "react/no-unused-state": 0,
         "react/prefer-stateless-function": 0,
         "react/jsx-closing-tag-location": 0,
         "react/jsx-filename-extension": 0,
+        "react/require-default-props": 0,
         "react/jsx-indent": 0,
         "import/no-extraneous-dependencies": 0,
         "arrow-parens": 2,

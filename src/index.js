@@ -6,22 +6,22 @@ import App from "./App";
 
 const user = {
   firstName: "Hu",
-  lastName: "Xiaofei",
+  lastName: "Xiaofei"
 };
 
-const fromatName = (user) => {
-  return `测试 ${user.firstName} ${user.lastName}`;
-};
+const fromatName = user => `测试 ${user.firstName} ${user.lastName}`;
 
 const elem = <div>IntroComponent , {fromatName(user)}!</div>;
 
 const render = (Component) => {
   ReactDOM.render(<AppContainer>
       <div>
-        <Component />
         <div>
           {elem}
         </div>
+
+        <Component />
+
       </div>
     </AppContainer>, document.getElementById("root"));
 };
