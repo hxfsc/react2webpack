@@ -8,8 +8,24 @@ class DateComponent extends Component {
     };
   }
 
+  componentDidMount() {
+    this.timerID = setInterval(() => {
+      this.tick();
+    }, 1 * 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+  }
+
   render() {
-    return <div>11</div>;
+    return <div>{this.state.date.toLocaleTimeString()}</div>;
   }
 }
 
