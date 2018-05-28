@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { AppContainer } from "react-hot-loader";
 
+import { Provider } from "mobx-react";
+import { AppContainer } from "react-hot-loader";
 import App from "./App";
+import appStore from "./store/store";
 
 const user = {
   firstName: "Hu",
@@ -19,9 +21,9 @@ const render = (Component) => {
         <div>
           {elem}
         </div>
-
-        <Component />
-
+        <Provider appStore={appStore}>
+          <Component />
+        </Provider>
       </div>
     </AppContainer>, document.getElementById("root"));
 };
