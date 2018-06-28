@@ -17,11 +17,12 @@ class ToggleComponent extends Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.handleToggle()}>{ this.state.state === true ? "ON" : "OFF" }</button>
+        <button onClick={() => this.handleToggle()}>
+          {this.state.state === true ? "ON" : "OFF"}
+        </button>
       </div>
-    )
+    );
   }
 }
-
 
 export default ToggleComponent;

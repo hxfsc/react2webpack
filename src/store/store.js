@@ -5,16 +5,14 @@ class AppStore {
   @observable num = 1;
 
   @action
-  change() {
-    this.name = "google"
-  }
-
-  @action
   changeNum(num) {
-    console.log(num)
     this.num = num;
   }
 
+  @action
+  chageBaseName(name) {
+    this.name = name;
+  }
 }
 
 const appStore = new AppStore();

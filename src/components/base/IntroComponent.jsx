@@ -14,10 +14,19 @@ class IntroComponent extends Component {
   }
 
   render() {
-    return (<div>
-      <input type="text" onChange={(e) => { this.changeNum(e) }} />
-      <label>appStore 的值为 <strong>{this.props.appStore.num}</strong></label>
-    </div>);
+    return (
+      <div>
+        <input
+          type="text"
+          onChange={e => {
+            this.changeNum(e);
+          }}
+        />
+        <label>
+          appStore 的值为 <strong>{this.props.appStore.num}</strong>
+        </label>
+      </div>
+    );
   }
 }
 
