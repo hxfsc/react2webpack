@@ -6,7 +6,6 @@
     },
 
     "extends": [
-        "airbnb",
         "plugin:jsx-a11y/recommended",
         "plugin:react/recommended"
     ],
@@ -16,7 +15,7 @@
     "rules": {
         "quotes": 0, //不区分单双引号
         "semi": 0, //不强制使用分号
-        "no-tabs": 1, //使用tabs警告
+        "no-tabs": 0, //使用tabs警告
         "no-shadow": 0,
         "arrow-parens": 0,
         "arrow-body-style": 0,

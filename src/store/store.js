@@ -1,18 +1,18 @@
 import { observable, action } from "mobx";
 
 class AppStore {
-  @observable name = "baidu";
-  @observable num = 1;
+    @observable name = "baidu";
+    @observable num = 1;
 
-  @action
-  changeNum(num) {
-    this.num = num;
-  }
+    @action
+    changeNum(num) {
+        this.num = num;
+    }
 
-  @action
-  chageBaseName(name) {
-    this.name = name;
-  }
+    @action
+    chageBaseName(name) {
+        this.name = name;
+    }
 }
 
 const appStore = new AppStore();

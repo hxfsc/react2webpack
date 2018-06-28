@@ -6,17 +6,17 @@ import DateC from "../src/components/base/DateComponent";
 import Toggle from "../src/components/base/ToggleComponent";
 
 class App extends Component {
-  render() {
-    return (
-      <div>
-        <Base />
-        <Intro />
-        <Props name="xxxx" />
-        <DateC />
-        <Toggle />
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div>
+                <Base />
+                <Intro />
+                <Props name="xxxx" />
+                <DateC />
+                <Toggle />
+            </div>
+        );
+    }
 }
 
 export default App;
