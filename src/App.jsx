@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Base from "../src/components/base/BaseComponent";
 import Intro from "../src/components/base/IntroComponent";
 import Props from "../src/components/base/PropsComponent";
@@ -8,8 +9,9 @@ import FormInput from "../src/components/base/FormInputComponent";
 
 import SiderMenu from "../src/components/menu/SiderMenuComponent";
 
-import { Layout, Icon } from "antd";
+import { Layout, Icon, Breadcrumb } from "antd";
 const { Header, Content, Sider, Footer } = Layout;
+
 class App extends Component {
     constructor(props) {
         super(props);
@@ -27,47 +29,81 @@ class App extends Component {
     render() {
         return (
             <div>
-                <Layout>
-                    <Sider
-                        theme={this.state.theme}
-                        trigger={null}
-                        collapsible
-                        collapsed={this.state.menuCollapsed}
-                        style={{
-                            width: "200px",
-                            minHeight: "100vh",
-                            borderRight: "1px solid #d9d9d9"
-                        }}>
-                        <SiderMenu />
-                    </Sider>
+                <Router>
                     <Layout>
-                        <Header style={{ background: "#FFF" }}>
-                            <Icon
-                                className="trigger"
-                                type={
-                                    this.state.menuCollapsed
-                                        ? "menu-unfold"
-                                        : "menu-fold"
-                                }
-                                onClick={this.menuToggle}
-                            />
-                        </Header>
-                        <Layout style={{ background: "#FFF" }}>
-                            <Content>
-                                <Base />
-                                <Intro />
-                                <Props name="fff ss" />
-                                <DateC />
-                                <Toggle />
-                                <hr />
-                                <FormInput />
-                            </Content>
-                            <Footer style={{ textAlign: "center" }}>
-                                @Blaiberry
-                            </Footer>
+                        <Sider
+                            theme={this.state.theme}
+                            trigger={null}
+                            collapsible
+                            collapsed={this.state.menuCollapsed}
+                            style={{
+                                width: "200px",
+                                minHeight: "100vh",
+                                borderRight: "1px solid #e8e8e8"
+                            }}>
+                            <SiderMenu />
+                        </Sider>
+                        <Layout>
+                            <Header
+                                style={{
+                                    background: "#FFF",
+                                    paddingLeft: "20px"
+                                }}>
+                                <Icon
+                                    className="trigger"
+                                    style={{ fontSize: "24px" }}
+                                    type={
+                                        this.state.menuCollapsed
+                                            ? "menu-unfold"
+                                            : "menu-fold"
+                                    }
+                                    onClick={this.menuToggle}
+                                />
+                            </Header>
+                            <Layout style={{ background: "#FFF" }}>
+                                <Breadcrumb style={{ padding: "20px" }}>
+                                    <Breadcrumb.Item>Home</Breadcrumb.Item>
+                                    <Breadcrumb.Item>
+                                        <a href="">Application Center</a>
+                                    </Breadcrumb.Item>
+                                    <Breadcrumb.Item>
+                                        <a href="">Application List</a>
+                                    </Breadcrumb.Item>
+                                    <Breadcrumb.Item>
+                                        An Application
+                                    </Breadcrumb.Item>
+                                </Breadcrumb>
+                                <Content>
+                                    <div style={{ padding: "20px" }}>
+                                        <Route exact path="/" component={Base} />
+                                        <Route
+                                            path="/intro"
+                                            component={Intro}
+                                        />
+                                        <Route
+                                            path="/toggle"
+                                            component={Toggle}
+                                        />
+                                        <Route
+                                            path="/forminput"
+                                            component={FormInput}
+                                        />
+                                        {/* <Base />
+                                    <Intro />
+                                    <Props name="fff ss" />
+                                    <DateC />
+                                    <Toggle />
+                                    <hr />
+                                    <FormInput /> */}
+                                    </div>
+                                </Content>
+                                <Footer style={{ textAlign: "center" }}>
+                                    @Blaiberry
+                                </Footer>
+                            </Layout>
                         </Layout>
                     </Layout>
-                </Layout>
+                </Router>
             </div>
         );
     }
