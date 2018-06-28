@@ -6,27 +6,65 @@ import DateC from "../src/components/base/DateComponent";
 import Toggle from "../src/components/base/ToggleComponent";
 import FormInput from "../src/components/base/FormInputComponent";
 
-import { Layout } from "antd";
+import SiderMenu from "../src/components/menu/SiderMenuComponent";
+
+import { Layout, Icon } from "antd";
 const { Header, Content, Sider, Footer } = Layout;
 class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            theme: "light",
+            menuCollapsed: false
+        };
+    }
+
+    menuToggle = () => {
+        this.setState({
+            menuCollapsed: !this.state.menuCollapsed
+        });
+    };
     render() {
         return (
             <div>
                 <Layout>
-                    <Sider style={{ width: "200px", minHeight: "100vh" }} />
+                    <Sider
+                        theme={this.state.theme}
+                        trigger={null}
+                        collapsible
+                        collapsed={this.state.menuCollapsed}
+                        style={{
+                            width: "200px",
+                            minHeight: "100vh",
+                            borderRight: "1px solid #d9d9d9"
+                        }}>
+                        <SiderMenu />
+                    </Sider>
                     <Layout>
-                        <Header />
-                        <Layout style={{background: "#FFF"}}>
+                        <Header style={{ background: "#FFF" }}>
+                            <Icon
+                                className="trigger"
+                                type={
+                                    this.state.menuCollapsed
+                                        ? "menu-unfold"
+                                        : "menu-fold"
+                                }
+                                onClick={this.menuToggle}
+                            />
+                        </Header>
+                        <Layout style={{ background: "#FFF" }}>
                             <Content>
                                 <Base />
                                 <Intro />
                                 <Props name="fff ss" />
                                 <DateC />
                                 <Toggle />
-                                <hr/>
+                                <hr />
                                 <FormInput />
                             </Content>
-                            <Footer style={{textAlign: "center"}}>@Blaiberry</Footer>
+                            <Footer style={{ textAlign: "center" }}>
+                                @Blaiberry
+                            </Footer>
                         </Layout>
                     </Layout>
                 </Layout>
