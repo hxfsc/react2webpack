@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { inject, observer } from "mobx-react";
+import { Input, Button } from "antd";
+
+const Search = Input.Search;
 
 @inject("appStore", "appStore")
 @observer
@@ -21,13 +24,24 @@ class BaseComponent extends Component {
         return (
             <div>
                 {this.props.appStore.name}
-                <input
+                <Input
                     type="text"
+                    size="large"
                     onChange={e => {
                         this.changeBaseName(e);
                     }}
                 />
-                <button onClick={() => this.changeName()}>改变名字</button>
+
+                <Search size="large" />
+
+                <Button
+                    size="large"
+                    type="primary"
+                    onClick={() => this.changeName()}>
+                    改变名字
+                </Button>
+
+                <Button type="danger" size="large">警告</Button>
             </div>
         );
     }

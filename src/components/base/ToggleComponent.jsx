@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-
+import { Switch, Button } from "antd";
 class ToggleComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            state: true
+            state: false
         };
     }
 
@@ -13,13 +13,23 @@ class ToggleComponent extends Component {
             state: !this.state.state
         });
     }
-
+    swithChage() {
+        this.setState({
+            state: !this.state.state
+        });
+    }
     render() {
         return (
             <div>
-                <button onClick={() => this.handleToggle()}>
+                <Switch
+                    checkedChildren="开"
+                    unCheckedChildren="关"
+                    checked={this.state.state}
+                    onChange={() => this.swithChage()}
+                />
+                <Button size="small" onClick={() => this.handleToggle()}>
                     {this.state.state === true ? "ON" : "OFF"}
-                </button>
+                </Button>
             </div>
         );
     }
