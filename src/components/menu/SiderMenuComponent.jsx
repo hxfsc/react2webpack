@@ -49,7 +49,7 @@ class SiderMenuComponent extends Component {
                         <span>表格</span>
                     </span>
                 }>
-                    <Menu.Item>111</Menu.Item>
+                    <Menu.Item><Link to="table-base">基础图表</Link></Menu.Item>
                     <Menu.Item>22</Menu.Item>
                     <Menu.Item>33</Menu.Item>
                     <Menu.Item>44</Menu.Item>

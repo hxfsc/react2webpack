@@ -9,6 +9,8 @@ import FormInput from "../src/components/base/FormInputComponent";
 
 import SiderMenu from "../src/components/menu/SiderMenuComponent";
 
+import TableBaseComponent from "../src/components/table/TableBaseComponent";
+
 import { Layout, Icon, Breadcrumb } from "antd";
 const { Header, Content, Sider, Footer } = Layout;
 
@@ -47,7 +49,8 @@ class App extends Component {
                             <Header
                                 style={{
                                     background: "#FFF",
-                                    paddingLeft: "20px"
+                                    paddingLeft: "20px",
+                                    borderBottom: "1px solid #e8e8e8"
                                 }}>
                                 <Icon
                                     className="trigger"
@@ -75,7 +78,11 @@ class App extends Component {
                                 </Breadcrumb>
                                 <Content>
                                     <div style={{ padding: "20px" }}>
-                                        <Route exact path="/" component={Base} />
+                                        <Route
+                                            exact
+                                            path="/"
+                                            component={Base}
+                                        />
                                         <Route
                                             path="/intro"
                                             component={Intro}
@@ -88,17 +95,15 @@ class App extends Component {
                                             path="/forminput"
                                             component={FormInput}
                                         />
-                                        {/* <Base />
-                                    <Intro />
-                                    <Props name="fff ss" />
-                                    <DateC />
-                                    <Toggle />
-                                    <hr />
-                                    <FormInput /> */}
+
+                                        <Route
+                                            path="/table-base"
+                                            component={TableBaseComponent}
+                                        />
                                     </div>
                                 </Content>
                                 <Footer style={{ textAlign: "center" }}>
-                                    @Blaiberry
+                                    @hxfsc
                                 </Footer>
                             </Layout>
                         </Layout>

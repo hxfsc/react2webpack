@@ -5,7 +5,10 @@ const config = require("./webpack.dev");
 const options = {
     contentBase: "./dist",
     hot: true,
-    host: "localhost",
+    host: "0.0.0.0",
+    historyApiFallback: {
+        index: "./index.html"
+    },
     overlay: {
         warnings: true,
         errors: true
