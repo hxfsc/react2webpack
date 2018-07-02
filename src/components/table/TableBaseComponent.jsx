@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Table } from "antd";
-import _ from "lodash";
-import { set } from "mobx";
+import { Table, message } from "antd";
 const colums = [
     {
         title: "姓名",
@@ -37,23 +35,22 @@ class TableBaseComponent extends Component {
         };
     }
 
-    delRows(){
-        let _resData ="";
-        // _resData = Array.from([...this.state.data, ...this.state.selectData]);
-        // this.state.selectData.fore
-        // _resData = this.state.data.filter((d)=>{
-        //     this.state.selectData.forEach(f=>{
-        //         return f.key === d.key
-        //     })
-        // })
+    delRows() {
+        let _resData = "";
+        let _data = this.state.data;
+        let _delData = this.state.selectData.map(d => {
+            return d.key;
+        });
 
-        _.dropWhile(this.state.data, this.state.selectData);
-        console.log(_resData)
+        _resData = _data.filter(d => {
+            return !_delData.includes(d.key);
+        });
+
         return _resData;
     }
 
     render() {
-        //console.log(this.state.data)
+
         const rowSelection = {
             hideDefaultSelections: true,
             selections: [
@@ -63,6 +60,8 @@ class TableBaseComponent extends Component {
                         this.setState({
                             data: this.delRows()
                         });
+
+                        message.success("del success", 1);
                     }
                 },
                 {
