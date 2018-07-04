@@ -34,10 +34,10 @@ class SiderMenuComponent extends Component {
                 <SubMenu title={
                     <span>
                         <Icon type="line-chart" />
-                        <span>图表</span>
+                        <span>Form</span>
                     </span>
                 }>
-                    <Menu.Item>111</Menu.Item>
+                    <Menu.Item><Link to="checkbox">多选</Link></Menu.Item>
                     <Menu.Item>22</Menu.Item>
                     <Menu.Item>33</Menu.Item>
                     <Menu.Item>44</Menu.Item>
@@ -49,7 +49,7 @@ class SiderMenuComponent extends Component {
                         <span>表格</span>
                     </span>
                 }>
-                    <Menu.Item><Link to="table-base">基础图表</Link></Menu.Item>
+                    <Menu.Item><Link to="table-base">基础表格</Link></Menu.Item>
                     <Menu.Item>22</Menu.Item>
                     <Menu.Item>33</Menu.Item>
                     <Menu.Item>44</Menu.Item>

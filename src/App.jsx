@@ -1,18 +1,21 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Base from "../src/components/base/BaseComponent";
-import Intro from "../src/components/base/IntroComponent";
-import Props from "../src/components/base/PropsComponent";
-import DateC from "../src/components/base/DateComponent";
-import Toggle from "../src/components/base/ToggleComponent";
-import FormInput from "../src/components/base/FormInputComponent";
+// import Base from "../src/components/base/BaseComponent";
+// import Intro from "../src/components/base/IntroComponent";
+// import Props from "../src/components/base/PropsComponent";
+// import DateC from "../src/components/base/DateComponent";
+// import Toggle from "../src/components/base/ToggleComponent";
+// import FormInput from "../src/components/base/FormInputComponent";
 
 import SiderMenu from "../src/components/menu/SiderMenuComponent";
 
-import TableBaseComponent from "../src/components/table/TableBaseComponent";
+// import TableBaseComponent from "../src/components/table/TableBaseComponent";
+// import CheckboxComponent from "../src/components/Form/CheckboxComponent";
 
 import { Layout, Icon, Breadcrumb } from "antd";
 const { Header, Content, Sider, Footer } = Layout;
+
+import RouterList from "../src/router/router";
 
 class App extends Component {
     constructor(props) {
@@ -28,7 +31,18 @@ class App extends Component {
             menuCollapsed: !this.state.menuCollapsed
         });
     };
+
     render() {
+        const RouteBox = route => (
+            <Route
+                path={route.path}
+                exact={route.exact}
+                render={props => (
+                    <route.component {...props} routes={route.routes} />
+                )}
+            />
+        );
+
         return (
             <div>
                 <Router>
@@ -78,28 +92,9 @@ class App extends Component {
                                 </Breadcrumb>
                                 <Content>
                                     <div style={{ padding: "20px" }}>
-                                        <Route
-                                            exact
-                                            path="/"
-                                            component={Base}
-                                        />
-                                        <Route
-                                            path="/intro"
-                                            component={Intro}
-                                        />
-                                        <Route
-                                            path="/toggle"
-                                            component={Toggle}
-                                        />
-                                        <Route
-                                            path="/forminput"
-                                            component={FormInput}
-                                        />
-
-                                        <Route
-                                            path="/table-base"
-                                            component={TableBaseComponent}
-                                        />
+                                        {RouterList.map((route, i) => (
+                                            <RouteBox key={i} {...route} />
+                                        ))}
                                     </div>
                                 </Content>
                                 <Footer style={{ textAlign: "center" }}>
