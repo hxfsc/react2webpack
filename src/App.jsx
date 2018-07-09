@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 // import Base from "../src/components/base/BaseComponent";
 // import Intro from "../src/components/base/IntroComponent";
 // import Props from "../src/components/base/PropsComponent";
@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 // import FormInput from "../src/components/base/FormInputComponent";
 
 import SiderMenu from "../src/components/menu/SiderMenuComponent";
-
+import Breakcrumb from "../src/components/breadcrumb/BreadcrumbComponent";
 // import TableBaseComponent from "../src/components/table/TableBaseComponent";
 // import CheckboxComponent from "../src/components/Form/CheckboxComponent";
 
@@ -78,19 +78,10 @@ class App extends Component {
                                 />
                             </Header>
                             <Layout style={{ background: "#FFF" }}>
-                                <Breadcrumb style={{ padding: "20px" }}>
-                                    <Breadcrumb.Item>Home</Breadcrumb.Item>
-                                    <Breadcrumb.Item>
-                                        <a href="">Application Center</a>
-                                    </Breadcrumb.Item>
-                                    <Breadcrumb.Item>
-                                        <a href="">Application List</a>
-                                    </Breadcrumb.Item>
-                                    <Breadcrumb.Item>
-                                        An Application
-                                    </Breadcrumb.Item>
-                                </Breadcrumb>
                                 <Content>
+                                    <div style={{padding: "20px"}}>
+                                        <Breakcrumb />
+                                    </div>
                                     <div style={{ padding: "20px" }}>
                                         {RouterList.map((route, i) => (
                                             <RouteBox key={i} {...route} />

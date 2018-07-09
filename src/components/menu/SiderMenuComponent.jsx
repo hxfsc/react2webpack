@@ -12,11 +12,7 @@ class SiderMenuComponent extends Component {
                 style={{ width: "100%", border:"none" }}
                 cover={<Icon type="gitlab" style={{fontSize: "60px"}} />}
             >
-                <Meta
-                style={{textAlign:"center"}}
-                title="CMS"
-                description="hxfsc"
-                />
+            <Meta style={{textAlign:"center"}} title="CMS"></Meta>
             </Card>
             <Menu theme="light" mode="vertical" style={{borderRight:0, width:"auto"}}>
                 <SubMenu title={

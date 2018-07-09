@@ -7,28 +7,51 @@ import FormInput from "../components/base/FormInputComponent";
 import TableBaseComponent from "../components/table/TableBaseComponent";
 import CheckboxComponent from "../components/Form/CheckboxComponent";
 
-
-
-export default [{
-    path: "/",
-    exact: true,
-    component: Base
-},{
-    path: "/base",
-    component: Base
-},{
-    path: "/intro",
-    component: Intro
-},{
-    path: "/toggle",
-    component: Toggle
-},{
-    path: "/forminput",
-    component: FormInput
-},{
-    path: "/table-base",
-    component: TableBaseComponent
-},{
-    path: "/checkbox",
-    component: CheckboxComponent
-}]
+export default [
+    {
+        path: "/",
+        exact: true,
+        breadcrumbName: "首页",
+        component: Base
+    },
+    {
+        path: "/base",
+        breadcrumbName: "基础",
+        component: Base
+    },
+    {
+        path: "/intro",
+        breadcrumbName: "简介",
+        component: Intro,
+        routes: [
+            {
+                path: "/intro/bus",
+                component: DateC
+            },
+            {
+                path: "/intro/cart",
+                component: DateC
+            }
+        ]
+    },
+    {
+        path: "/toggle",
+        breadcrumbName: "切换",
+        component: Toggle
+    },
+    {
+        path: "/forminput",
+        breadcrumbName: "表单输入",
+        component: FormInput
+    },
+    {
+        path: "/table-base",
+        breadcrumbName: "基础表单",
+        component: TableBaseComponent
+    },
+    {
+        path: "/checkbox",
+        breadcrumbName: "多选",
+        component: CheckboxComponent
+    }
+];
