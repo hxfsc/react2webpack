@@ -1,70 +1,58 @@
 import React, { Component } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Menu, Icon, Card } from "antd";
+import RouteList from "../../router/router";
 
 const SubMenu = Menu.SubMenu;
 const { Meta } = Card;
+
 class SiderMenuComponent extends Component {
+    renderMenu(data) {
+        return data.map((item) => {
+            if (item.children) {
+                return (
+                    <SubMenu
+                        key={item.id + "s"}
+                        title={
+                            <span>
+                                <Icon type={item.icon} />
+                                <span>{item.name}</span>
+                            </span>
+                        }>
+                        {this.renderMenu(item.children)}
+                    </SubMenu>
+                );
+            }
+
+            return (
+                <Menu.Item key={item.id}>
+                    <Link to={item.path} href={item.path}>
+                        <span>{item.name}</span>
+                    </Link>
+                </Menu.Item>
+            );
+        });
+    }
+
     render() {
-        return (<div>
-            <Card
-                hoverable
-                style={{ width: "100%", border:"none" }}
-                cover={<Icon type="gitlab" style={{fontSize: "60px"}} />}
-            >
-            <Meta style={{textAlign:"center"}} title="CMS"></Meta>
-            </Card>
-            <Menu theme="light" mode="vertical" style={{borderRight:0, width:"auto"}}>
-                <SubMenu title={
-                    <span>
-                        <Icon type="dashboard" />
-                        <span>首页</span>
-                    </span>
-                }>
-                    <Menu.Item><Link to="/intro">Intro</Link></Menu.Item>
-                    <Menu.Item>22</Menu.Item>
-                    <Menu.Item>33</Menu.Item>
-                    <Menu.Item>44</Menu.Item>
-                </SubMenu>
+        //console.log(this.renderMenu(RouteList));
+        return (
+            <div>
+                <Card
+                    hoverable
+                    style={{ width: "100%", border: "none" }}
+                    cover={<Icon type="gitlab" style={{ fontSize: "60px" }} />}>
+                    <Meta style={{ textAlign: "center" }} title="CMS" />
+                </Card>
 
-                <SubMenu title={
-                    <span>
-                        <Icon type="line-chart" />
-                        <span>Form</span>
-                    </span>
-                }>
-                    <Menu.Item><Link to="checkbox">多选</Link></Menu.Item>
-                    <Menu.Item>22</Menu.Item>
-                    <Menu.Item>33</Menu.Item>
-                    <Menu.Item>44</Menu.Item>
-                </SubMenu>
-
-                <SubMenu title={
-                    <span>
-                        <Icon type="table" />
-                        <span>表格</span>
-                    </span>
-                }>
-                    <Menu.Item><Link to="table-base">基础表格</Link></Menu.Item>
-                    <Menu.Item>22</Menu.Item>
-                    <Menu.Item>33</Menu.Item>
-                    <Menu.Item>44</Menu.Item>
-                </SubMenu>
-
-                <SubMenu title={
-                    <span>
-                        <Icon type="api" />
-                        <span>页面</span>
-                    </span>
-                }>
-                    <Menu.Item>111</Menu.Item>
-                    <Menu.Item>22</Menu.Item>
-                    <Menu.Item>33</Menu.Item>
-                    <Menu.Item>44</Menu.Item>
-                </SubMenu>
-
-            </Menu>
-        </div>);
+                <Menu
+                    theme="light"
+                    mode="vertical"
+                    style={{ borderRight: 0, width: "auto" }}>
+                    {this.renderMenu(RouteList)}
+                </Menu>
+            </div>
+        );
     }
 }
 
