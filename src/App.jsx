@@ -18,86 +18,78 @@ const { Header, Content, Sider, Footer } = Layout;
 import RouterList from "../src/router/router";
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            theme: "light",
-            menuCollapsed: false
-        };
-    }
-
-    menuToggle = () => {
-        this.setState({
-            menuCollapsed: !this.state.menuCollapsed
-        });
+  constructor(props) {
+    super(props);
+    this.state = {
+      theme: "light",
+      menuCollapsed: false
     };
+  }
 
-    render() {
-        const RouteBox = route => (
-            <Route
-                path={route.path}
-                exact={route.exact}
-                render={props => (
-                    <route.component {...props} routes={route.routes} />
-                )}
-            />
-        );
+  menuToggle = () => {
+    this.setState({
+      menuCollapsed: !this.state.menuCollapsed
+    });
+  };
 
-        return (
-            <div>
-                <Router>
-                    <Layout>
-                        <Sider
-                            theme={this.state.theme}
-                            trigger={null}
-                            collapsible
-                            collapsed={this.state.menuCollapsed}
-                            style={{
-                                width: "200px",
-                                minHeight: "100vh",
-                                borderRight: "1px solid #e8e8e8"
-                            }}>
-                            <SiderMenu />
-                        </Sider>
-                        <Layout>
-                            <Header
-                                style={{
-                                    background: "#FFF",
-                                    paddingLeft: "20px",
-                                    borderBottom: "1px solid #e8e8e8"
-                                }}>
-                                <Icon
-                                    className="trigger"
-                                    style={{ fontSize: "24px" }}
-                                    type={
-                                        this.state.menuCollapsed
-                                            ? "menu-unfold"
-                                            : "menu-fold"
-                                    }
-                                    onClick={this.menuToggle}
-                                />
-                            </Header>
-                            <Layout style={{ background: "#FFF" }}>
-                                <Content>
-                                    <div style={{padding: "20px"}}>
-                                        <Breakcrumb />
-                                    </div>
-                                    <div style={{ padding: "20px" }}>
-                                        {RouterList.map((route, i) => (
-                                            <RouteBox key={i} {...route} />
-                                        ))}
-                                    </div>
-                                </Content>
-                                <Footer style={{ textAlign: "center" }}>
-                                    @hxfsc
-                                </Footer>
-                            </Layout>
-                        </Layout>
-                    </Layout>
-                </Router>
-            </div>
-        );
-    }
+  render() {
+    const RouteBox = route => (
+      <Route
+        path={route.path}
+        exact={route.exact}
+        render={props => <route.component {...props} routes={route.routes} />}
+      />
+    );
+
+    return (
+      <div>
+        <Router>
+          <Layout>
+            <Sider
+              theme={this.state.theme}
+              trigger={null}
+              collapsible
+              collapsed={this.state.menuCollapsed}
+              style={{
+                width: "200px",
+                minHeight: "100vh",
+                borderRight: "1px solid #e8e8e8"
+              }}>
+              <SiderMenu />
+            </Sider>
+            <Layout>
+              <Header
+                style={{
+                  background: "#FFF",
+                  paddingLeft: "20px",
+                  borderBottom: "1px solid #e8e8e8"
+                }}>
+                <Icon
+                  className="trigger"
+                  style={{ fontSize: "24px" }}
+                  type={this.state.menuCollapsed ? "menu-unfold" : "menu-fold"}
+                  onClick={this.menuToggle}
+                />
+              </Header>
+              <Layout style={{ background: "#FFF" }}>
+                <Content>
+                  <div style={{ padding: "20px" }}>
+                    <Breakcrumb />
+                  </div>
+                  <div style={{ padding: "20px" }}>
+                    {RouterList.map((route, i) => (
+                      <RouteBox key={i} {...route} />
+                    ))}
+                  </div>
+                </Content>
+                <Footer style={{ textAlign: "center" }}>@hxfsc</Footer>
+              </Layout>
+            </Layout>
+          </Layout>
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -9,13 +9,16 @@ const { Meta } = Card;
 class SiderMenuComponent extends Component {
     constructor() {
         super();
-        this.state = {
-            openKeys: ["1"]
-        };
     }
-    rootSubmenuKeys = RouteList.map(item=>{
-        return item.id;
+
+    state = {
+        openKeys: ["1"]
+    };
+
+    rootSubmenuKeys = RouteList.map(item => {
+        return item.id + "";
     });
+
     renderMenu(data) {
         return data.map(item => {
             if (item.children) {
@@ -47,12 +50,10 @@ class SiderMenuComponent extends Component {
     }
 
     onOpenChange = openKeys => {
-        //console.log(openKeys);
         const latestOpenKey = openKeys.find(
             key => this.state.openKeys.indexOf(key) === -1
         );
 
-        console.log(this.rootSubmenuKeys)
         if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
             this.setState({ openKeys });
         } else {
@@ -63,7 +64,6 @@ class SiderMenuComponent extends Component {
     };
 
     render() {
-        //console.log(this.renderMenu(RouteList));
         return (
             <div>
                 <Card
