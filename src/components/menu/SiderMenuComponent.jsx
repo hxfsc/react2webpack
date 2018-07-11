@@ -7,12 +7,21 @@ const SubMenu = Menu.SubMenu;
 const { Meta } = Card;
 
 class SiderMenuComponent extends Component {
+    constructor() {
+        super();
+        this.state = {
+            openKeys: ["1"]
+        };
+    }
+    rootSubmenuKeys = RouteList.map(item=>{
+        return item.id;
+    });
     renderMenu(data) {
-        return data.map((item) => {
+        return data.map(item => {
             if (item.children) {
                 return (
                     <SubMenu
-                        key={item.id + "s"}
+                        key={item.id}
                         title={
                             <span>
                                 <Icon type={item.icon} />
@@ -27,12 +36,31 @@ class SiderMenuComponent extends Component {
             return (
                 <Menu.Item key={item.id}>
                     <Link to={item.path} href={item.path}>
-                        <span>{item.name}</span>
+                        <span>
+                            <Icon type={item.icon} />
+                            <span>{item.name}</span>
+                        </span>
                     </Link>
                 </Menu.Item>
             );
         });
     }
+
+    onOpenChange = openKeys => {
+        //console.log(openKeys);
+        const latestOpenKey = openKeys.find(
+            key => this.state.openKeys.indexOf(key) === -1
+        );
+
+        console.log(this.rootSubmenuKeys)
+        if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
+            this.setState({ openKeys });
+        } else {
+            this.setState({
+                openKeys: latestOpenKey ? [latestOpenKey] : []
+            });
+        }
+    };
 
     render() {
         //console.log(this.renderMenu(RouteList));
@@ -47,7 +75,9 @@ class SiderMenuComponent extends Component {
 
                 <Menu
                     theme="light"
-                    mode="vertical"
+                    mode="inline"
+                    openKeys={this.state.openKeys}
+                    onOpenChange={openKeys => this.onOpenChange(openKeys)}
                     style={{ borderRight: 0, width: "auto" }}>
                     {this.renderMenu(RouteList)}
                 </Menu>

@@ -9,16 +9,10 @@ import CheckboxComponent from "../components/Form/CheckboxComponent";
 
 export default [
     {
-        path: "/",
-        exact: true,
-        name: "首页",
-        id: 1,
-        component: Base
-    },
-    {
         path: "/base",
         name: "基础",
         component: Base,
+        icon: "appstore",
         id: 1,
         children: [
             {
@@ -57,6 +51,7 @@ export default [
         path: "/intro",
         name: "简介",
         component: Intro,
+        icon: "appstore",
         id: 7,
         children: [
             {
@@ -107,6 +102,7 @@ export default [
         path: "/toggle",
         name: "切换",
         component: Toggle,
+        icon: "appstore",
         id: 15,
         children: [
             {
@@ -163,6 +159,7 @@ export default [
         path: "/forminput",
         name: "表单输入",
         component: FormInput,
+        icon: "appstore",
         id: 23,
         children: [
             {
@@ -220,6 +217,7 @@ export default [
         name: "基础表单",
         id: 31,
         component: TableBaseComponent,
+        icon: "appstore",
         children: [
             {
                 path: "/toggle",
@@ -275,6 +273,7 @@ export default [
         path: "/checkbox",
         name: "多选",
         component: CheckboxComponent,
+        icon: "appstore",
         id: 40,
         children: [
             {

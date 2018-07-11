@@ -42,6 +42,7 @@ class BaseComponent extends Component {
                 </Button>
 
                 <Button type="danger" size="large">警告</Button>
+                <div style={{height: "2000px"}}></div>
             </div>
         );
     }
