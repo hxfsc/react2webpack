@@ -1,10 +1,11 @@
+const path = require("path");
 const webpackDevServer = require("webpack-dev-server");
 const webpack = require("webpack");
 
 const config = require("./webpack.dev");
 const options = {
-    contentBase: "./dist",
-    hot: true,
+    contentBase: path.resolve(__dirname, "/dist"),
+    inline: true,
     host: "0.0.0.0",
     historyApiFallback: {
         index: "./index.html"

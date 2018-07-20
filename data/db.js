@@ -1,15 +1,14 @@
-const faker = require("faker/locale/zh_CN");
-function customData() {
-  let _customData = [];
-  for (let i = 0; i < 100; i++) {
-    _customData.push({
-      name: faker.name.firstName() + faker.name.lastName(),
-      address: faker.address.streetAddress() + faker.address.city(),
-      phone: faker.phone.phoneNumberFormat()
-    });
-  }
+const Koa = require("koa");
+const router = require("koa-router")();
+const bodyParser = require("koa-bodyparser");
+const app = new Koa();
 
-  return { data: _customData };
-}
+router.get("/hello/:name", async (ctx, next) => {
+  var name = ctx.params.name;
+  ctx.response.body = `<h1>Hello, ${name}!</h1>`;
+});
 
-module.exports = customData;
+app.use(bodyParser());
+app.use(router.routes());
+
+app.listen(3001);

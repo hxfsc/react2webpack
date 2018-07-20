@@ -25,7 +25,11 @@ class DateComponent extends Component {
   }
 
   render() {
-    return <div>{this.state.date.toLocaleTimeString()}</div>;
+    return (
+      <div>
+        {this.state.date.toLocaleTimeString()}
+      </div>
+    );
   }
 }
 

@@ -16,10 +16,10 @@ export default [
     id: 1,
     children: [
       {
-        path: "/base",
+        path: "/base/datec",
         name: "基础一",
         id: 2,
-        component: Base
+        component: DateC
       },
       {
         path: "/base",

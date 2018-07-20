@@ -1,17 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-// import Base from "../src/components/base/BaseComponent";
-// import Intro from "../src/components/base/IntroComponent";
-// import Props from "../src/components/base/PropsComponent";
-// import DateC from "../src/components/base/DateComponent";
-// import Toggle from "../src/components/base/ToggleComponent";
-// import FormInput from "../src/components/base/FormInputComponent";
-
 import SiderMenu from "../src/components/menu/SiderMenuComponent";
 import Breakcrumb from "../src/components/breadcrumb/BreadcrumbComponent";
-// import TableBaseComponent from "../src/components/table/TableBaseComponent";
-// import CheckboxComponent from "../src/components/Form/CheckboxComponent";
-
+import dataC from "../src/components/base/DateComponent";
 import { Layout, Icon, Breadcrumb } from "antd";
 const { Header, Content, Sider, Footer } = Layout;
 
@@ -32,15 +23,28 @@ class App extends Component {
     });
   };
 
-  render() {
-    const RouteBox = route => (
-      <Route
-        path={route.path}
-        exact={route.exact}
-        render={props => <route.component {...props} routes={route.routes} />}
-      />
-    );
+  RouteBoxList = route => {
+    // if (!route.children) {
+    //   return (
+    //     <Route
+    //       path={route.path}
+    //       exact={route.exact}
+    //       render={props => <route.component {...props} routes={route.routes} />}
+    //     />
+    //   );
+    // }else{
+    //   this.RouteBox(route.children)
+    // }
+  };
 
+  render() {
+    const RouteBox = route => {
+        return (<Route
+             path={route.path}
+             exact={route.exact}
+             render={props => <route.component {...props} routes={route.children} />}
+           />)
+    };
     return (
       <div>
         <Router>
@@ -77,9 +81,13 @@ class App extends Component {
                     <Breakcrumb />
                   </div>
                   <div style={{ padding: "20px" }}>
+                    <Route path="/base/datec" component={dataC} />
                     {RouterList.map((route, i) => (
                       <RouteBox key={i} {...route} />
                     ))}
+
+
+
                   </div>
                 </Content>
                 <Footer style={{ textAlign: "center" }}>@hxfsc</Footer>

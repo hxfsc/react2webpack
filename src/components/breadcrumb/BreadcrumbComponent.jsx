@@ -14,7 +14,7 @@ class BreadcrumbComponent extends Component {
     //         </Breadcrumb.Item>
     //     );
     // });
-
+    console.log(currentRouter)
     // return [(<Breadcrumb.Item key="home"><Link to="/">首页</Link></Breadcrumb.Item>)].concat(current);
   }
 

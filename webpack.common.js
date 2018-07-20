@@ -1,6 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+
 module.exports = {
     entry: {
         app: path.resolve(__dirname, "./src/index.js")
@@ -8,7 +8,8 @@ module.exports = {
 
     output: {
         filename: "[name].[hash].js",
-        path: path.resolve(__dirname, "./dist")
+        path: path.resolve(__dirname, "./dist"),
+        publicPath: "/"
     },
 
     resolve: {
@@ -43,7 +44,6 @@ module.exports = {
     },
 
     plugins: [
-        new CleanWebpackPlugin(["./dist"]),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, "./src/index.html")
         })
