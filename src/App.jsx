@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import SiderMenu from "../src/components/menu/SiderMenuComponent";
 import Breakcrumb from "../src/components/breadcrumb/BreadcrumbComponent";
 import dataC from "../src/components/base/DateComponent";
@@ -39,11 +39,15 @@ class App extends Component {
 
   render() {
     const RouteBox = route => {
-        return (<Route
-             path={route.path}
-             exact={route.exact}
-             render={props => <route.component {...props} routes={route.children} />}
-           />)
+      return (
+        <Route
+          path={route.path}
+          exact={route.exact}
+          render={props => (
+            <route.component {...props} routes={route.children} />
+          )}
+        />
+      );
     };
     return (
       <div>
@@ -81,13 +85,11 @@ class App extends Component {
                     <Breakcrumb />
                   </div>
                   <div style={{ padding: "20px" }}>
-                    <Route path="/base/datec" component={dataC} />
-                    {RouterList.map((route, i) => (
-                      <RouteBox key={i} {...route} />
-                    ))}
-
-
-
+                    <Switch>
+                      {RouterList.map((route, i) => (
+                        <RouteBox key={i} {...route} />
+                      ))}
+                    </Switch>
                   </div>
                 </Content>
                 <Footer style={{ textAlign: "center" }}>@hxfsc</Footer>

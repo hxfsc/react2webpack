@@ -68,7 +68,7 @@ class SiderMenuComponent extends Component {
       <div>
         <Card
           hoverable
-          style={{ width: "100%", border: "none" }}
+          style={{ border: "none" }}
           cover={<Icon type="gitlab" style={{ fontSize: "60px" }} />}>
           <Meta style={{ textAlign: "center" }} title="CMS" />
         </Card>
@@ -78,6 +78,7 @@ class SiderMenuComponent extends Component {
           mode="inline"
           openKeys={this.state.openKeys}
           onOpenChange={openKeys => this.onOpenChange(openKeys)}
+          inlineCollapsed={this.state.collapsed}
           style={{ borderRight: 0, width: "auto" }}>
           {this.renderMenu(RouteList)}
         </Menu>

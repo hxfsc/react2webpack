@@ -16,7 +16,7 @@ export default [
     id: 1,
     children: [
       {
-        path: "/base/datec",
+        path: "base/datec",
         name: "基础一",
         id: 2,
         component: DateC
