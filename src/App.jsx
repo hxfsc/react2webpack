@@ -17,10 +17,8 @@ class App extends Component {
     };
   }
 
-  menuToggle = () => {
-    this.setState({
-      menuCollapsed: !this.state.menuCollapsed
-    });
+  menuToggle = menuCollapsed => {
+    this.setState({menuCollapsed: !this.state.menuCollapsed});
   };
 
   RouteBoxList = route => {
@@ -55,15 +53,15 @@ class App extends Component {
           <Layout>
             <Sider
               theme={this.state.theme}
-              trigger={null}
-              collapsible
               collapsed={this.state.menuCollapsed}
+              onCollapse={this.menuToggle}
+              trigger={null}
               style={{
                 width: "200px",
                 minHeight: "100vh",
                 borderRight: "1px solid #e8e8e8"
               }}>
-              <SiderMenu />
+              <SiderMenu collapsed = {this.state.menuCollapsed}/>
             </Sider>
             <Layout>
               <Header

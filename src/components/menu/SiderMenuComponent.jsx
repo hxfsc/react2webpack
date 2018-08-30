@@ -7,12 +7,11 @@ const SubMenu = Menu.SubMenu;
 const { Meta } = Card;
 
 class SiderMenuComponent extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   state = {
-    openKeys: ["1"]
   };
 
   rootSubmenuKeys = RouteList.map(item => {
@@ -76,9 +75,8 @@ class SiderMenuComponent extends Component {
         <Menu
           theme="light"
           mode="inline"
-          openKeys={this.state.openKeys}
           onOpenChange={openKeys => this.onOpenChange(openKeys)}
-          inlineCollapsed={this.state.collapsed}
+          inlineCollapsed={this.props.collapsed}
           style={{ borderRight: 0, width: "auto" }}>
           {this.renderMenu(RouteList)}
         </Menu>
