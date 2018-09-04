@@ -16,31 +16,31 @@ export default [
     id: 1,
     children: [
       {
-        path: "base/datec",
+        path: "datec",
         name: "基础一",
         id: 2,
         component: DateC
       },
       {
-        path: "/base",
+        path: "dated",
         name: "基础一",
         id: 3,
         component: Base
       },
       {
-        path: "/base",
+        path: "/base/dateg",
         name: "基础一",
         id: 4,
         component: Base
       },
       {
-        path: "/base",
+        path: "/base/datef",
         name: "基础一",
         id: 5,
         component: Base
       },
       {
-        path: "/base",
+        path: "/base/datee",
         name: "基础一",
         id: 6,
         component: Base
@@ -55,43 +55,43 @@ export default [
     id: 7,
     children: [
       {
-        path: "/datec",
+        path: "/intro/datec",
         name: "简介一",
         id: 8,
         component: DateC
       },
       {
-        path: "/datec",
+        path: "/intro/datef",
         name: "简介一",
         id: 9,
         component: DateC
       },
       {
-        path: "/datec",
+        path: "/intro/datej",
         name: "简介一",
         id: 10,
         component: DateC
       },
       {
-        path: "/datec",
+        path: "/intro/dateh",
         name: "简介一",
         id: 11,
         component: DateC
       },
       {
-        path: "/datec",
+        path: "/intro/dateg",
         name: "简介一",
         id: 12,
         component: DateC
       },
       {
-        path: "/datec",
+        path: "/intro/datee",
         name: "简介一",
         id: 13,
         component: DateC
       },
       {
-        path: "/datec",
+        path: "/intro/datef",
         name: "简介一",
         id: 14,
         component: DateC
@@ -106,49 +106,49 @@ export default [
     id: 15,
     children: [
       {
-        path: "/toggle",
+        path: "/toggle/datefd",
         name: "切换一",
         id: 16,
         component: Toggle
       },
       {
-        path: "/toggle",
+        path: "/toggle/dateffs",
         name: "切换一",
         id: 17,
         component: Toggle
       },
       {
-        path: "/toggle",
+        path: "/toggle/datefs",
         name: "切换一",
         id: 18,
         component: Toggle
       },
       {
-        path: "/toggle",
+        path: "/toggle/datefs",
         name: "切换一",
         id: 19,
         component: Toggle
       },
       {
-        path: "/toggle",
+        path: "/toggle/dateff",
         name: "切换一",
         id: 20,
         component: Toggle
       },
       {
-        path: "/toggle",
+        path: "/toggle/datefs",
         name: "切换一",
         id: 21,
         component: Toggle
       },
       {
-        path: "/toggle",
+        path: "/toggle/datefd",
         name: "切换一",
         id: 22,
         component: Toggle
       },
       {
-        path: "/toggle",
+        path: "/toggle/dates",
         name: "切换一",
         id: 221,
         component: Toggle
@@ -163,49 +163,49 @@ export default [
     id: 23,
     children: [
       {
-        path: "/toggle",
+        path: "/forminput/datesg",
         name: "切换一",
         id: 23,
         component: Toggle
       },
       {
-        path: "/toggle",
+        path: "/forminput/datetts",
         name: "切换一",
         id: 24,
         component: Toggle
       },
       {
-        path: "/toggle",
+        path: "/forminput/datets",
         name: "切换一",
         id: 25,
         component: Toggle
       },
       {
-        path: "/toggle",
+        path: "/forminput/datec",
         name: "切换一",
         id: 26,
         component: Toggle
       },
       {
-        path: "/toggle",
+        path: "/forminput/datesa",
         name: "切换一",
         id: 27,
         component: Toggle
       },
       {
-        path: "/toggle",
+        path: "/forminput/datesf",
         name: "切换一",
         id: 28,
         component: Toggle
       },
       {
-        path: "/toggle",
+        path: "/forminput/dates",
         name: "切换一",
         id: 29,
         component: Toggle
       },
       {
-        path: "/toggle",
+        path: "/forminput/datec",
         name: "切换一",
         id: 30,
         component: Toggle

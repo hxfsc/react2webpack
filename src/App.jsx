@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import SiderMenu from "../src/components/menu/SiderMenuComponent";
 import Breakcrumb from "../src/components/breadcrumb/BreadcrumbComponent";
 import dataC from "../src/components/base/DateComponent";
+import NoMatch from "../src/components/NoMatch";
+
 import { Layout, Icon, Breadcrumb } from "antd";
 const { Header, Content, Sider, Footer } = Layout;
 
@@ -39,12 +41,12 @@ class App extends Component {
     const RouteBox = route => {
       return (
         <Route
-          path={route.path}
-          exact={route.exact}
-          render={props => (
-            <route.component {...props} routes={route.children} />
-          )}
-        />
+            path={route.path}
+            exact={route.exact}
+            render={props => (
+              <route.component {...props} routes={route.children} />
+            )}
+          />
       );
     };
     return (
@@ -87,6 +89,7 @@ class App extends Component {
                       {RouterList.map((route, i) => (
                         <RouteBox key={i} {...route} />
                       ))}
+                      <Route component={NoMatch} />
                     </Switch>
                   </div>
                 </Content>
