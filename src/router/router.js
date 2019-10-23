@@ -1,11 +1,11 @@
-import Base from "../components/base/BaseComponent";
-import Intro from "../components/base/IntroComponent";
-import Props from "../components/base/PropsComponent";
-import DateC from "../components/base/DateComponent";
-import Toggle from "../components/base/ToggleComponent";
-import FormInput from "../components/base/FormInputComponent";
-import TableBaseComponent from "../components/table/TableBaseComponent";
-import CheckboxComponent from "../components/Form/CheckboxComponent";
+import Base from "../page/base/BaseComponent";
+import Intro from "../page/base/IntroComponent";
+import Props from "../page/base/PropsComponent";
+import DateC from "../page/base/DateComponent";
+import Toggle from "../page/base/ToggleComponent";
+import FormInput from "../page/base/FormInputComponent";
+import TableBaseComponent from "../page/table/TableBaseComponent";
+import CheckboxComponent from "../page/Form/CheckboxComponent";
 
 export default [
   {

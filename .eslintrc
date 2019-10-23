@@ -11,22 +11,33 @@
   "plugins": [
     "jsx-a11y"
   ],
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "version": "15.0",
+      "flowVersion": "0.53"
+    },
+    "propWrapperFunctions": [
+      "forbidExtraProps"
+    ]
+  },
   "rules": {
-    "quotes": 0, //不区分单双引号
-    "semi": 0, //不强制使用分号
-    "no-tabs": 0, //使用tabs警告
+    "quotes": 0,
+    "semi": 0,
+    "no-tabs": 0,
     "no-shadow": 0,
     "arrow-parens": 0,
     "arrow-body-style": 0,
-    "no-trailing-spaces": 1, //一行结尾有空格警告
+    "no-trailing-spaces": 0,
     "no-useless-constructor": 0,
     "comma-dangle": [
       2,
       "never"
-    ], //字面量尾不能有逗号
+    ],
     "global-require": 0,
-    "constructor-super": 0, //派生类不强制使用 constructor super
-    "no-this-before-super": 0, //不强制在this 前 super
+    "constructor-super": 0,
+    "no-this-before-super": 0,
     "padded-blocks": 0,
     "no-console": 0,
     "no-restricted-globals": 0,
@@ -39,6 +50,14 @@
     "react/require-default-props": 0,
     "react/jsx-indent": 0,
     "import/no-extraneous-dependencies": 0,
+    "jsx-a11y/label-has-associated-control": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
+    "jsx-a11y/media-has-caption": 0,
+    "react/jsx-no-target-blank": 0,
+    "jsx-a11y/no-onchange": 0,
+    "react/no-string-refs": 0,
     "react/prop-types": 0
   }
 }
