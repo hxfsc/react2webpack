@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Menu, Icon, Card } from "antd";
 import RouteList from "../../router/router";
+import _ from "lodash"
 
 const SubMenu = Menu.SubMenu;
 const { Meta } = Card;
@@ -12,11 +13,16 @@ class SiderMenuComponent extends Component {
   }
 
   state = {
+    openKeys: []
   };
 
   rootSubmenuKeys = RouteList.map(item => {
-    return item.id + "";
+    return item.id+"";
   });
+
+  formatMenu = (data, parentPath = "/") => {
+
+  }
 
   renderMenu(data) {
     return data.map(item => {
@@ -49,6 +55,7 @@ class SiderMenuComponent extends Component {
   }
 
   onOpenChange = openKeys => {
+
     const latestOpenKey = openKeys.find(
       key => this.state.openKeys.indexOf(key) === -1
     );
@@ -60,6 +67,8 @@ class SiderMenuComponent extends Component {
         openKeys: latestOpenKey ? [latestOpenKey] : []
       });
     }
+
+    console.log(this.state.openKeys)
   };
 
   render() {
@@ -75,7 +84,8 @@ class SiderMenuComponent extends Component {
         <Menu
           theme="light"
           mode="inline"
-          onOpenChange={openKeys => this.onOpenChange(openKeys)}
+          openKeys={this.state.openKeys}
+          onOpenChange={ this.onOpenChange }
           inlineCollapsed={this.props.collapsed}
           style={{ borderRight: 0, width: "auto" }}>
           {this.renderMenu(RouteList)}
