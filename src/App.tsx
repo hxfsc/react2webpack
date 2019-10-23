@@ -5,6 +5,9 @@ import { Layout, Menu, Icon } from "antd"
 
 const { Header, Sider, Content } = Layout
 
+
+import routes, { IRouter } from "./router/router"
+
 import * as styles from "@static/styles/css.scss"
 
 interface IProps { }
@@ -27,24 +30,25 @@ class App extends React.Component<IProps, IState> {
     });
   };
 
+  get renderMenu(): React.ReactNode {
+    return routes.map((router: IRouter, index: number): React.ReactNode => {
+      const { name } = router
+      return (
+        <Menu.Item key={index} >
+          <Icon type="user" />
+          <span>{name}</span>
+        </Menu.Item >
+      )
+    })
+  }
+
   render() {
     return (
       <Layout className={styles["app-main"]}>
         <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
           <div className={styles["logo"]} />
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-            <Menu.Item key="1">
-              <Icon type="user" />
-              <span>nav 1</span>
-            </Menu.Item>
-            <Menu.Item key="2">
-              <Icon type="video-camera" />
-              <span>nav 2</span>
-            </Menu.Item>
-            <Menu.Item key="3">
-              <Icon type="upload" />
-              <span>nav 3</span>
-            </Menu.Item>
+          <Menu theme="dark" mode="inline" defaultSelectedKeys={["0"]}>
+            {this.renderMenu}
           </Menu>
         </Sider>
         <Layout>
@@ -55,14 +59,7 @@ class App extends React.Component<IProps, IState> {
               onClick={this.toggle}
             />
           </Header>
-          <Content
-            style={{
-              margin: '24px 16px',
-              padding: 24,
-              background: '#fff',
-              minHeight: 280,
-            }}
-          >
+          <Content className={styles["app-content"]}>
             Content
           </Content>
         </Layout>

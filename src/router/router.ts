@@ -1,56 +1,53 @@
-import Base from "../page/base/BaseComponent";
-import Intro from "../page/base/IntroComponent";
-import Props from "../page/base/PropsComponent";
-import DateC from "../page/base/DateComponent";
-import Toggle from "../page/base/ToggleComponent";
-import FormInput from "../page/base/FormInputComponent";
-import TableBaseComponent from "../page/table/TableBaseComponent";
-import CheckboxComponent from "../page/Form/CheckboxComponent";
+interface IRouter {
+  path: string,
+  name: string,
+  component: string,
+  icon: string,
+  children: IRouter[]
+}
 
-export default [
+const routes = [
   {
     path: "/base",
     name: "基础",
-    component: Base,
+    component: null,
     icon: "appstore",
-    id: 1,
     children: [
       {
-        path: "/datec",
+        path: "/base",
         name: "基础一",
-        id: 2,
-        component: DateC
+        component: null
       },
       {
         path: "/dated",
         name: "基础一",
         id: 3,
-        component: Base
+        component: null
       },
       {
         path: "/dateg",
         name: "基础一",
         id: 4,
-        component: Base
+        component: null
       },
       {
         path: "/datef",
         name: "基础一",
         id: 5,
-        component: Base
+        component: null
       },
       {
         path: "/datee",
         name: "基础一",
         id: 6,
-        component: Base
+        component: null
       }
     ]
   },
   {
-    path: "/intro",
-    name: "简介",
-    component: Intro,
+    path: "/redux",
+    name: "Redux",
+    component: null,
     icon: "appstore",
     id: 7,
     children: [
@@ -58,50 +55,50 @@ export default [
         path: "/datec",
         name: "简介一",
         id: 8,
-        component: DateC
+        component: null
       },
       {
         path: "/datef",
         name: "简介一",
         id: 9,
-        component: DateC
+        component: null
       },
       {
         path: "/datej",
         name: "简介一",
         id: 10,
-        component: DateC
+        component: null
       },
       {
         path: "/dateh",
         name: "简介一",
         id: 11,
-        component: DateC
+        component: null
       },
       {
         path: "/dateg",
         name: "简介一",
         id: 12,
-        component: DateC
+        component: null
       },
       {
         path: "/datee",
         name: "简介一",
         id: 13,
-        component: DateC
+        component: null
       },
       {
         path: "/datef",
         name: "简介一",
         id: 14,
-        component: DateC
+        component: null
       }
     ]
   },
   {
-    path: "/toggle",
-    name: "切换",
-    component: Toggle,
+    path: "/pages",
+    name: "布局",
+    component: null,
     icon: "appstore",
     id: 15,
     children: [
@@ -109,56 +106,56 @@ export default [
         path: "/datefd",
         name: "切换一",
         id: 16,
-        component: Toggle
+        component: null
       },
       {
         path: "/dateffs",
         name: "切换一",
         id: 17,
-        component: Toggle
+        component: null
       },
       {
         path: "/datefs",
         name: "切换一",
         id: 18,
-        component: Toggle
+        component: null
       },
       {
         path: "/datefs",
         name: "切换一",
         id: 19,
-        component: Toggle
+        component: null
       },
       {
         path: "/dateff",
         name: "切换一",
         id: 20,
-        component: Toggle
+        component: null
       },
       {
         path: "/datefs",
         name: "切换一",
         id: 21,
-        component: Toggle
+        component: null
       },
       {
         path: "/datefd",
         name: "切换一",
         id: 22,
-        component: Toggle
+        component: null
       },
       {
         path: "/dates",
         name: "切换一",
         id: 221,
-        component: Toggle
+        component: null
       }
     ]
   },
   {
     path: "/forminput",
     name: "表单输入",
-    component: FormInput,
+    component: null,
     icon: "appstore",
     id: 23,
     children: [
@@ -166,113 +163,113 @@ export default [
         path: "/datesg",
         name: "切换一",
         id: 23,
-        component: Toggle
+        component: null
       },
       {
         path: "/datetts",
         name: "切换一",
         id: 24,
-        component: Toggle
+        component: null
       },
       {
         path: "/datets",
         name: "切换一",
         id: 25,
-        component: Toggle
+        component: null
       },
       {
         path: "/datec",
         name: "切换一",
         id: 26,
-        component: Toggle
+        component: null
       },
       {
         path: "/datesa",
         name: "切换一",
         id: 27,
-        component: Toggle
+        component: null
       },
       {
         path: "/datesf",
         name: "切换一",
         id: 28,
-        component: Toggle
+        component: null
       },
       {
         path: "/dates",
         name: "切换一",
         id: 29,
-        component: Toggle
+        component: null
       },
       {
         path: "/datec",
         name: "切换一",
         id: 30,
-        component: Toggle
+        component: null
       }
     ]
   },
   {
-    path: "/table-base",
+    path: "/table-null",
     name: "基础表单",
     id: 31,
-    component: TableBaseComponent,
+    component: null,
     icon: "appstore",
     children: [
       {
         path: "/toggle",
         name: "切换一",
         id: 32,
-        component: Toggle
+        component: null
       },
       {
         path: "/toggle",
         name: "切换一",
         id: 33,
-        component: Toggle
+        component: null
       },
       {
         path: "/toggle",
         name: "切换一",
         id: 34,
-        component: Toggle
+        component: null
       },
       {
         path: "/toggle",
         name: "切换一",
         id: 35,
-        component: Toggle
+        component: null
       },
       {
         path: "/toggle",
         name: "切换一",
         id: 36,
-        component: Toggle
+        component: null
       },
       {
         path: "/toggle",
         name: "切换一",
         id: 37,
-        component: Toggle
+        component: null
       },
       {
         path: "/toggle",
         name: "切换一",
         id: 38,
-        component: Toggle
+        component: null
       },
       {
         path: "/toggle",
         name: "切换一",
         id: 39,
-        component: Toggle
+        component: null
       }
     ]
   },
   {
     path: "/checkbox",
     name: "多选",
-    component: CheckboxComponent,
+    component: null,
     icon: "appstore",
     id: 40,
     children: [
@@ -280,50 +277,54 @@ export default [
         path: "/togglecd",
         name: "切换一",
         id: 41,
-        component: Toggle
+        component: null
       },
       {
         path: "/toggleaq",
         name: "切换一",
         id: 42,
-        component: Toggle
+        component: null
       },
       {
         path: "/toggle345",
         name: "切换一",
         id: 43,
-        component: Toggle
+        component: null
       },
       {
         path: "/toggle22",
         name: "切换一",
         id: 44,
-        component: Toggle
+        component: null
       },
       {
         path: "/toggle5",
         name: "切换一",
         id: 45,
-        component: Toggle
+        component: null
       },
       {
         path: "/toggle4",
         name: "切换一",
         id: 46,
-        component: Toggle
+        component: null
       },
       {
         path: "/toggle3",
         name: "切换一",
         id: 47,
-        component: Toggle
+        component: null
       },
       {
         path: "/toggle2",
         name: "切换一",
         id: 48,
-        component: Toggle
+        component: null
       }
     ]
   }
-];
+]
+
+
+export { IRouter }
+export default routes
