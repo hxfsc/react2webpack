@@ -32,8 +32,8 @@
       "@net/*": [
         "./src/net/*"
       ],
-      "@reducer/*": [
-        "./src/reducer/*"
+      "@reducers/*": [
+        "./src/reducers/*"
       ],
       "@utils/*": [
         "./src/utils/*"

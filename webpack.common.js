@@ -22,7 +22,7 @@ module.exports = {
       "@pages": path.resolve("src/pages"),
       "@static": path.resolve("src/static"),
       "@net": path.resolve("src/net"),
-      "@reducer": path.resolve("src/reducer"),
+      "@reducers": path.resolve("src/reducers"),
       "@utils": path.resolve("src/utils")
     },
     plugins: [new TsConfigPathsPlugin({ configFile: "./tsconfig.json" })]

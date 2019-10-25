@@ -1,3 +1,6 @@
+
+import ReduxBase from "@pages/Redux/Base"
+
 interface IRouter {
   path: string,
   name: string,
@@ -52,10 +55,10 @@ const routes = [
     id: 7,
     children: [
       {
-        path: "/datec",
+        path: "/redux/base",
         name: "简介一",
         id: 8,
-        component: null
+        component: ReduxBase
       },
       {
         path: "/datef",
