@@ -10,11 +10,6 @@ const { SubMenu } = Menu
 
 
 import ReduxBase from "@pages/Redux/Base"
-
-
-
-
-
 import routes, { IRouter } from "./router/router"
 
 import * as styles from "@static/styles/css.scss"
